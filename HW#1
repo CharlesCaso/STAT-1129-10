@@ -1,0 +1,33 @@
+#Question 1
+FavoriteColors = ["blue", "green", "orange", "red"]
+print(FavoriteColors)
+
+#Question 2
+Interval3 = list(range(30, 61, 3))
+print(Interval3)
+TupleList = tuple(Interval3)
+print(type(TupleList))
+print(TupleList)
+
+#Question 3
+Custom = list()
+print(Custom)
+Custom.append(int("0"))
+Custom.append(int("1"))
+Custom.append(int("2"))
+Custom.append(int("3"))
+Custom.append(int("4"))
+Custom.append(int("5"))
+print(Custom)
+Custom.remove(2)
+print(Custom)
+Custom.insert(2,float("2.0"))
+print(Custom)
+print(len(Custom))
+print(max(Custom))
+print(min(Custom))
+
+#Quesiton 4
+IntervalQ4 = list(range(1, 11))
+print(IntervalQ4)
+sum (IntervalQ4)

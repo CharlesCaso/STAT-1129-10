@@ -1,0 +1,58 @@
+# Question 1
+n = 0
+while n <5:
+    print(n)
+    n += 1
+
+# Question 2
+n=0
+while n < 5:
+    print(n)
+    n += 1
+else:
+    print(n, "is not less than 5")
+
+# Question 3
+fruitlist = ["oranges", "pineapples", "grapes", "watermelons", "apples"]
+for fruit in fruitlist:
+    if fruit == "apples":
+        print("Are", fruit, "really fruits?")
+        break
+    else:
+        print("I like", fruit)
+
+# Question 4
+total = 0
+for number in range (31):
+    total = total + number
+print ("Sum = ", total)
+
+# Question 5
+weather = {"sunny": "play", "rainy": "watch TV", "cloudy": "walk"}
+for forecast, activity in weather.items():
+    print("When its", forecast, "let us", activity)
+
+weather.update({"snowy": "ski"})
+for forecast, activity in weather.items():
+    print("When its", forecast, "let us", activity)
+
+# Question 6
+for forecast, activity in weather.items():
+    if forecast:
+        print ("When its", forecast, "let us", activity)
+    else:
+       print ("")
+
+# Question 7
+grade = input ("Enter the grade: ")
+
+if int(grade) >= 90:
+    print("A")
+elif int(grade) >= 80 and int(grade) <90:
+    print("B")
+elif int(grade) >= 70 and int(grade) <80:
+    print("C")
+elif int(grade) >= 60 and int(grade) <70:
+    print("D")
+else:
+    print("F")

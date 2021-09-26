@@ -1,0 +1,87 @@
+#Question 0
+marks = {'Phil': 92, 'Henry': 85, 'Frank': 76, 'Joe': 70, 'Bob':64, 'Victor':99}
+print(marks)
+
+#Question 1
+for name, grade in marks.items():
+    print (name, "has a grade of", grade)
+    
+#Question 2    
+#Question Two Maximum Value
+max(marks.values())
+
+#Question 2 Minimum Value
+min(marks.values())
+
+#Question 2 Average
+(sum(marks.values()))/(len(marks))    
+
+#Question 3
+for name in marks.keys():
+    if 'J' in name:
+        break
+    else:
+        print(name)
+      
+#Question 4
+for name in marks.keys():
+    if 'J' in name:
+        print("")
+    else:
+        print(name)
+        
+#Question 5 
+def gradeFinder (name):
+    if name in marks.keys():
+        print (marks[name])
+    else:
+        print ("Cannot find this student's name")
+        
+gradeFinder ('Joe')
+gradeFinder ('Emily')
+
+#Question 6
+def less_than(num):
+    n = 0
+    while n <= (num):
+        n = n + 1
+        if n <= num:
+            print (n, "and", num, "to the power of", n, "=", pow(num, n))
+    else:
+        print(n, "is greater than", num)
+        
+        
+less_than(5)
+
+#Question 7
+def sumOf(num):
+    n = 1
+    sums = 0
+    while n < num:
+        n = n + 1
+        sums = num + n
+        
+    print(sums)
+        
+sumOf(5)
+
+#Question 9
+def sumUp (num):
+    for n in range(num):
+        print (num, "+", n, "=", num + n)
+        
+sumUp(5)
+
+# Question 10
+def minimum(v1, v2, v3, v4):
+    minValue = v1
+    if v2 < minValue:
+        minValue = v2
+    if v3 < minValue:
+        minValue = v3
+    if v4 < minValue:
+        minValue = v4
+    print(minValue)
+        
+        
+minimum(8, 4, 7, 3)

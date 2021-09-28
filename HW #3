@@ -26,7 +26,7 @@ for name in marks.keys():
 #Question 4
 for name in marks.keys():
     if 'J' in name:
-        print("")
+        continue
     else:
         print(name)
         
@@ -48,27 +48,29 @@ def less_than(num):
         if n <= num:
             print (n, "and", num, "to the power of", n, "=", pow(num, n))
     else:
-        print(n, "is greater than", num)
+        print(n, "is greater than", num)  
         
-        
-less_than(5)
+less_than(8)
 
 #Question 7
 def sumOf(num):
     n = 1
     sums = 0
     while n < num:
+        sums = sums + n
         n = n + 1
-        sums = num + n
-        
     print(sums)
         
 sumOf(5)
 
 #Question 9
 def sumUp (num):
+    n = 1
+    sums = 0
     for n in range(num):
-        print (num, "+", n, "=", num + n)
+        sums = sums + n
+        n = n +1
+        print (sums)
         
 sumUp(5)
 

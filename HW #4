@@ -1,0 +1,53 @@
+#Question 1
+import numpy as np
+question1 = np.array([[1,2,3,4],[5,6,7,8],[9,10,11,12]])
+
+print(question1*2)
+    
+print ("Dimension", question1.ndim)
+print ("Shape", question1.shape)
+
+
+#Question 2
+for row in question1:
+    for column in row:
+        print(column, end=' ')
+    print(" ")
+   
+print("")
+
+for row in question1:
+    for column in row:
+        print(column, end=' ')
+    print(end='')
+    
+    
+#Question 3
+
+import numpy as np
+xinteger = np.arange(1,7)
+yinteger = np.arange(5,11)
+
+import matplotlib.pyplot as plt
+
+xpoints = xinteger
+ypoints = yinteger
+
+plt.plot(xpoints, ypoints)
+plt.show()
+
+
+#Question 4
+
+xpointsQ4 = np.array([3,6,9,12])
+ypointsQ4 = np.array([2,8,1,10])
+
+plt.plot(xpointsQ4, ypointsQ4, marker = 'D')
+plt.show
+
+
+#Question 5
+
+ypointsQ5 = np.array([2,4,6,14,10,12])
+
+plt.plot (ypointsQ5, 'o--r', marker = 'D', ms = 10, mec = 'g', mfc = 'g')

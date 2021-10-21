@@ -1,0 +1,105 @@
+#Question 1
+
+import matplotlib.pyplot as plt
+import numpy as np
+
+ypoints = np.array([9,13])
+ypoints1 = np.array([5,9])
+ypoints2 = np.array([1,5])
+
+plt.plot(ypoints, linewidth = '1')
+plt.plot(ypoints1, linewidth = '1') 
+plt.plot(ypoints2, linewidth = '1')
+plt.show()
+
+#Question 2
+
+mu, sigma = 0, .2
+data = np.random.normal(mu, sigma, 800)
+plt.hist(data)
+plt.show()
+
+#Question 3 Pie Chart
+
+mydic = {"Apples": 45, "Bananas":25, "Cherries":15, "Dates":20}
+fruitlist = list(mydic.keys())
+countlist = list(mydic.values())
+
+print(fruitlist)
+print(countlist)
+
+#Pie Chart
+
+y = np.array(countlist)
+mylables = (fruitlist)
+myexplode = [0.1,0.1,0.1,0.1]
+
+plt.pie(y, labels = mylables, explode = myexplode)
+plt.legend(bbox_to_anchor = (1.05,1), loc = 'upper left')
+
+#Question 3 Bar Chart
+x = np.array(fruitlist)
+
+plt.bar(x, y)
+plt.show
+
+#Question 4
+x = marks_range = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
+y1 = math_marks = [88, 92, 80, 89, 90, 80, 60, 88, 80, 84]
+y2 = science_marks = [75, 59, 69, 48, 65, 56, 32, 45, 20, 30]
+
+colors1 = np.array(["red"])
+colors2 = np.array(["green"])
+
+plt.title("Scatter Plot")
+plt.xlabel("Marks Range")
+plt.ylabel("Marks Scored")
+
+col = ("red")
+col1 = ("green")
+
+plt.scatter(x,y1, c=colors1, label = 'Math Marks')
+plt.scatter(x,y2, c=colors2, label = 'Science Marks')
+
+plt.legend()
+
+plt.show()
+
+#Question 5
+
+#Plot 1
+x = np.array((0, 1, 2, 7))
+y = np.array((0,9,0,4))
+y2 = np.array((0,5,1,2))
+x2 =np.array((1,2,3,4))
+
+plt.subplot(1,4,1)
+plt.title("Multiple Line Chart")
+plt.plot(x,y)
+plt.plot(x2,y2)
+
+#Plot 2
+x = np.array((3,4,5,1,6,7,8,9,1,2,2,5,7,9,4,2,5,6,3,1))
+y = np.array((6,5,3,8,9,0,4,4,3,5,8,6,5,7,8,9,1,2,2,2))
+
+plt.subplot(1,4,2)
+plt.title("Scatterplot")
+plt.scatter(x,y)
+
+#Plot 3
+
+mu, sigma = 1, .6
+data = np.random.normal(mu, sigma, 1000)
+
+plt.subplot(1,4,3)
+plt.title("Histogram")
+plt.hist(data)
+
+#Plot 4
+
+plt.subplot (1,4,4)
+plt.title("Bar Chart")
+plt.bar(x,y)
+
+plt.tight_layout()
+plt.show()

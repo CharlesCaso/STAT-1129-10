@@ -1,0 +1,58 @@
+# Question 1
+
+list1 = [2,4,6,8,4,5,2,1,9,0,4,6,7,4,3,2,1,9,10,3,7,9,6,0,1,3,5,6,7,8,9,10,2,3,6,8,9,10,6,7,4,3]
+
+set_list1 = set(list1) #Set with each unique value from list1
+minimum = min(list1)
+listdic = {}
+
+print("Input : \n", list1)
+print("\n")
+print("Output: ")
+
+for n in set_list1: #Count the number of repeated values from list1 corresponding to each unique value
+    print(n, ":", list1.count(n))
+    num = n
+    unique_num = list1.count(n)
+    listdic[num] = unique_numa
+
+print("\n")
+for i in listdic:
+    if i == minimum:
+        print("Explaination : \nHere", i, "occurs", listdic[i], "times, " , end="")
+    elif i == minimum + 1 :
+        print (i, "occurs", listdic[i], "times and so on...")
+    else:
+        break
+    
+# Plot Histogram
+
+import matplotlib.pyplot as plt
+import numpy as np
+
+datapoints = len(set_list1)
+plt.hist(list1, datapoints)
+plt.title("Histogram")
+plt.xlabel("Value")
+plt.ylabel("Frequency")
+plt.show()
+
+# Store this dictionary results into json file and store in your local computer.
+
+import json
+import os
+
+cwd = os.getcwd()
+os.chdir("/Users/CharlesCaso/Downloads")
+
+f = open("DictionaryOutput.json", "w")
+json.dump(listdic, f, indent = 4)
+f.close()
+
+f = open("DictionaryOutput.json", "r")
+f.read()
+    
+#Question 2
+
+
+

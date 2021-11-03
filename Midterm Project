@@ -54,5 +54,47 @@ f.read()
     
 #Question 2
 
+print("Question 2: Amazon Purchase History (2020)")
+
+import pandas as pd
+import os
+import numpy as np
+
+os.chdir("/users/CharlesCaso/Downloads") #Locating Directory with Amazon Purchase History data
+df = pd.read_csv("MidtermData.csv") 
+
+df["Item Total"] = df["Item Total"].str.replace('$','').astype(float) #Converting the data from string to float
+# Also removed the $ before each of the values
+
+print("Sum of all items purchased in 2020: ${:.2f}".format(df["Item Total"].sum())) 
+print("Average purchase price of all items in 2020: ${:.2f}".format(df["Item Total"].mean())) 
+print("Most expensive item purchased in 2020: ${:.2f}\n".format(df["Item Total"].max()))
+
+#Find what dates these purchases are from
+
+df["Order Date"] = pd.to_datetime(df["Order Date"]) # Convert to datetime for the computer to recognize them
+
+daily_orders = df.groupby("Order Date").sum()["Item Total"] #df.groupby adds the item totals for orders on the same day
+daily_orders.plot.bar(title = "Amazon Purchase Amounts in 2020" ,ylabel = "Item Total", xlabel = "Day", figsize = (40,10))
+#Order date on the x axis and Item Total on the y axis, and the figsize adjusts the scaling
+
+#Find monthy payment and graph information in a pie chart and line chart
+
+df["Order Date"] = pd.to_datetime(df["Order Date"])
+df["Order Date"] = df["Order Date"].dt.strftime('%Y-%m') # only inclide year and month in the "Order Date" column
+
+monthly_orders = df.groupby("Order Date").sum()["Item Total"] # sum of item totals grouped by month
+
+monthly_orders.plot.pie(title = "Amazon Purchase Amounts in 2020" , figsize = (40,10), autopct='%1.0f%%')
+# graph monthly purchase totals as a pie chart
+
+import matplotlib.pyplot as plt
+
+plt.xticks([0, 1, 2, 3 ,4 ,5 ,6 ,7 ,8, 9, 10, 11], ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"], rotation=20)
+#Label the x-axis
+
+monthly_orders.plot.bar(title = "Amazon Purchase Amounts in 2020" , ylabel = "Item Totals", figsize = (30,10))
+# Plots a bar chart 
+
 
 

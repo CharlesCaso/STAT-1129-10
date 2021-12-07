@@ -1,0 +1,27 @@
+# Question 1
+
+matrix1 <- matrix(c(7,2,9,4,12,13), nrow = 2, ncol = 3)
+matrix2 <- matrix(c(1,2,3,7,8,9,12,13,14,19,20,21), nrow = 3, ncol = 4)
+
+matrix1 %*% matrix2
+
+# Question 2
+
+amazon_Data <- data.frame(read.csv(file = 'MidtermData.csv'))
+amazon_Data
+
+sum(amazon_Data[["Item.Total"]])
+mean(amazon_Data[["Item.Total"]])
+max(amazon_Data[["Item.Total"]])
+
+data_new1 <- amazon_Data                                
+data_new1$year <- strftime(data_new1$Order.Date, "%Y")  
+data_new1$month <- strftime(data_new1$Order.Date, "%m") 
+head(data_new1)                                 
+
+data_aggr1 <- aggregate(Item.Total ~ month + year, data_new1, FUN = sum)
+head(data_aggr1) 
+
+labels <- (data_aggr1[["month"]])
+pie(data_aggr1[["Item.Total"]], label = labels)
+
